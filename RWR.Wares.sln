@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWR.Wares.DSBO", "RWR.Wares.DSBO\RWR.Wares.DSBO.csproj", "{DD7A4100-A31F-4AAD-8F29-CF8971A25956}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWR.Wares.UI", "RWR.Wares.UI\RWR.Wares.UI.csproj", "{E9BAFC81-F223-4A14-91C9-8DC6C7BE111C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ECC09A68-C6A2-42A5-A363-C61F1386C4BD}"
+	ProjectSection(SolutionItems) = preProject
+		GetProfileValue.sql = GetProfileValue.sql
+		GetWeightedCommodities.sql = GetWeightedCommodities.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD7A4100-A31F-4AAD-8F29-CF8971A25956}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7A4100-A31F-4AAD-8F29-CF8971A25956}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7A4100-A31F-4AAD-8F29-CF8971A25956}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7A4100-A31F-4AAD-8F29-CF8971A25956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9BAFC81-F223-4A14-91C9-8DC6C7BE111C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9BAFC81-F223-4A14-91C9-8DC6C7BE111C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9BAFC81-F223-4A14-91C9-8DC6C7BE111C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9BAFC81-F223-4A14-91C9-8DC6C7BE111C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8E4683E-D990-4BB2-97E1-9D5CE6B26018}
+	EndGlobalSection
+EndGlobal

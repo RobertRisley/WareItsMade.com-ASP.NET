@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD7A4100-A31F-4AAD-8F29-CF8971A25956}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RWR.Wares.DSBO</RootNamespace>
+    <AssemblyName>RWR.Wares.DSBO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassesCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassesCD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CountrysCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CountrysCD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PercentagesOwnCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PercentagesOwnCD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PercentagesTD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PercentagesTD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchCD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SubdivisionsCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubdivisionsCD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsersWaresTD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersWaresTD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WaresCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WaresCD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FamilysCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FamilysCD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentsCD.cs">
+      <DependentUpon>SegmentsCD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SegmentsCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SegmentsCD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WeightedWaresCD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeightedWaresCD.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassesCD.xsc">
+      <DependentUpon>ClassesCD.xsd</DependentUpon>
+    </None>
+    <None Include="ClassesCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClassesCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ClassesCD.xss">
+      <DependentUpon>ClassesCD.xsd</DependentUpon>
+    </None>
+    <None Include="CountrysCD.xsc">
+      <DependentUpon>CountrysCD.xsd</DependentUpon>
+    </None>
+    <None Include="CountrysCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CountrysCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CountrysCD.xss">
+      <DependentUpon>CountrysCD.xsd</DependentUpon>
+    </None>
+    <None Include="PercentagesOwnCD.xsc">
+      <DependentUpon>PercentagesOwnCD.xsd</DependentUpon>
+    </None>
+    <None Include="PercentagesOwnCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PercentagesOwnCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PercentagesOwnCD.xss">
+      <DependentUpon>PercentagesOwnCD.xsd</DependentUpon>
+    </None>
+    <None Include="PercentagesTD.xsc">
+      <DependentUpon>PercentagesTD.xsd</DependentUpon>
+    </None>
+    <None Include="PercentagesTD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PercentagesTD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PercentagesTD.xss">
+      <DependentUpon>PercentagesTD.xsd</DependentUpon>
+    </None>
+    <None Include="SearchCD.xsc">
+      <DependentUpon>SearchCD.xsd</DependentUpon>
+    </None>
+    <None Include="SearchCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SearchCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SearchCD.xss">
+      <DependentUpon>SearchCD.xsd</DependentUpon>
+    </None>
+    <None Include="SubdivisionsCD.xsc">
+      <DependentUpon>SubdivisionsCD.xsd</DependentUpon>
+    </None>
+    <None Include="SubdivisionsCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SubdivisionsCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SubdivisionsCD.xss">
+      <DependentUpon>SubdivisionsCD.xsd</DependentUpon>
+    </None>
+    <None Include="UsersWaresTD.xsc">
+      <DependentUpon>UsersWaresTD.xsd</DependentUpon>
+    </None>
+    <None Include="UsersWaresTD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsersWaresTD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="UsersWaresTD.xss">
+      <DependentUpon>UsersWaresTD.xsd</DependentUpon>
+    </None>
+    <None Include="WaresCD.xsc">
+      <DependentUpon>WaresCD.xsd</DependentUpon>
+    </None>
+    <None Include="WaresCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WaresCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="WaresCD.xss">
+      <DependentUpon>WaresCD.xsd</DependentUpon>
+    </None>
+    <None Include="FamilysCD.xsc">
+      <DependentUpon>FamilysCD.xsd</DependentUpon>
+    </None>
+    <None Include="FamilysCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FamilysCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="FamilysCD.xss">
+      <DependentUpon>FamilysCD.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SegmentsCD.xsc">
+      <DependentUpon>SegmentsCD.xsd</DependentUpon>
+    </None>
+    <None Include="SegmentsCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SegmentsCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SegmentsCD.xss">
+      <DependentUpon>SegmentsCD.xsd</DependentUpon>
+    </None>
+    <None Include="WeightedWaresCD.xsc">
+      <DependentUpon>WeightedWaresCD.xsd</DependentUpon>
+    </None>
+    <None Include="WeightedWaresCD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WeightedWaresCD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="WeightedWaresCD.xss">
+      <DependentUpon>WeightedWaresCD.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

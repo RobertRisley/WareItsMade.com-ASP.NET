@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="RWR.Wares.UI.SiteMaster" EnableViewState="True" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+	<meta charset="utf-8" />
+	<title><%: Page.Title %> - WareItsMade.com</title>
+	<asp:PlaceHolder runat="server">
+		<%: Scripts.Render("~/bundles/modernizr") %>
+	</asp:PlaceHolder>
+	<webopt:BundleReference runat="server" Path="~/Content/css" />
+	<link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="~/favicon.ico" type="image/ico" />
+	<meta name="viewport" content="width=device-width" />
+	<asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+
+	<script type="text/javascript">
+		function waterMark(textbox, event, isPasswordType, defaultValue) {
+			if (event.type == "blur") {
+				if (isPasswordType && textbox.type != "password") {
+					textbox.type = "password";
+				}
+
+				if (textbox.value.length == 0) {
+					textbox.value = defaultValue;
+					textbox.className = "watermark";
+					if (isPasswordType) {
+						textbox.type = "text";
+					}
+				}
+			}
+
+			if (event.type == "focus") {
+				if (isPasswordType) {
+					textbox.type = "password";
+				}
+
+				if (textbox.value == defaultValue) {
+					textbox.value = "";
+					textbox.className = "normal";
+				}
+			}
+		}
+
+		function numeralsOnly(evt) {
+			evt = (evt) ? evt : event;
+			var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+			if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+				//alert("Enter numerals only in this field.");
+				return false;
+			}
+			return true;
+		}
+	</script>
+
+	<style type="text/css">
+		.watermark {
+			color: DarkGray;
+		}
+
+		.normal {
+		}
+
+		.imagebutton {
+			font-size: 1em;
+			padding: 0px;
+			margin-right: 0px;
+			background-color: #efeeef;
+			border-width: 0px;
+		}
+
+		.textvcenter {
+			padding-top: 4px;
+			padding-left: 2px;
+		}
+
+		.padleft {
+			padding-left: 10px;
+		}
+	</style>
+
+</head>
+<body style="overflow-y: scroll">
+	<form runat="server">
+		<asp:ScriptManager runat="server">
+			<Scripts>
+				<%--Framework Scripts--%>
+				<asp:ScriptReference Name="MsAjaxBundle" />
+				<asp:ScriptReference Name="jquery" />
+				<asp:ScriptReference Name="jquery.ui.combined" />
+				<asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+				<asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+				<asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+				<asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+				<asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+				<asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+				<asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+				<asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+				<asp:ScriptReference Name="WebFormsBundle" />
+				<%--Site Scripts--%>
+			</Scripts>
+		</asp:ScriptManager>
+		<div class="content-wrapper" style="height: 20px">
+			<div class="float-left">
+				<p class="site-title">
+					<a runat="server" href="~/" title="Go To WareItsMade Home">Ware It's Made</a>
+				</p>
+			</div>
+			<div class="float-right">
+				<section id="login">
+					<asp:LoginView ID="loginView" runat="server" ViewStateMode="Disabled">
+						<AnonymousTemplate>
+							<asp:Panel runat="server" DefaultButton="ctl00$loginView$ctl02$_btnLogin">
+								<asp:Login LoginButtonType="Link" runat="server" ViewStateMode="Disabled" RenderOuterTable="false" OnLoginError="LoginError">
+									<LayoutTemplate>
+										<asp:Button runat="server" ID="_btnRegister" ToolTip="Sign up..It's easy" Text="Register" Height="24" OnClick="_btnRegister_Click" />&nbsp; &nbsp;
+                                        <asp:TextBox runat="server" ID="UserName" onfocus="waterMark(this, event, false, 'User Name')" onblur="waterMark(this, event, false, 'User Name')" ToolTip="User Name" Text="User Name" CssClass="watermark" Height="12" Width="175" Font-Size="8" />
+										<asp:TextBox runat="server" ID="Password" onfocus="waterMark(this, event, true, 'Password')" onblur="waterMark(this, event, true, 'Password')" ToolTip="Password" Text="Password" CssClass="watermark" Height="12" Width="75" Font-Size="8" />
+										<asp:Button runat="server" ID="_btnLogin" ToolTip="Click to Log In" CommandName="Login" Text="Log In" Height="24" BorderStyle="Solid" BorderWidth="1px" />
+										<asp:CheckBox Visible="False" runat="server" ID="RememberMe" Text="Remember me" CssClass="float-left" Font-Size="10px" ForeColor="DarkGray" />
+									</LayoutTemplate>
+								</asp:Login>
+							</asp:Panel>
+						</AnonymousTemplate>
+						<LoggedInTemplate>
+							<p>
+								<a runat="server" href="~/EditProfile.aspx" title="Edit your Profile">
+									<asp:LoginName runat="server" Height="10" />
+								</a>
+								&nbsp; &nbsp;
+                                        <a runat="server" href="~/Wares.aspx" id="_btnManage" title="Manage your Wares">Manage Wares</a>
+								&nbsp; &nbsp;
+                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" ToolTip="Click to Log Off" />
+							</p>
+						</LoggedInTemplate>
+					</asp:LoginView>
+				</section>
+			</div>
+			<div id="body">
+				<section class="content-wrapper main-content clear-fix">
+					<asp:ContentPlaceHolder runat="server" ID="MainContent" />
+				</section>
+			</div>
+			<div class="footer">
+				<div class="float-left">
+					WareItsMade &copy; <%: DateTime.Now.Year %> - Robert W. Risley, ESQ&nbsp; &nbsp; 
+                        <a id="A2" runat="server" href="~/About.aspx">About</a>&nbsp; &nbsp; 
+                        <a id="A3" runat="server" href="~/Contact.aspx">Contact</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
